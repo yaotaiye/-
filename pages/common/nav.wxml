@@ -1,0 +1,15 @@
+<template name="nav">
+ 
+   <view class="mv-mg-b-sm">
+        <view class="weui-grids mv-text-c">
+            <block wx:for="{{navList}}" wx:key="*this">
+                <view bindtap="navigateTo" data-url="{{item.url}}"  class="weui-grid" hover-class="weui-grid_active" >
+                    <view class="weui-grid__label mv-text-lg">{{ item.name }}</view>
+                    <view class=" mv-cl-999 mv-text-sm mv-mg-b-sm">{{ item.info }}</view>
+                    <image mode="widthFix" src="{{ item.src }}" style="height:60px; width:60px;"></image>
+                </view>
+            </block>
+        </view>
+    </view>
+</template>
+ 

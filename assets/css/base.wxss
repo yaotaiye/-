@@ -1,0 +1,536 @@
+
+.bg-white {
+	background: #fff
+}
+.bg-oragen{background: #f3420c}
+.bg-purple{background: #c82590}
+img {
+	border: 0;
+	vertical-align: middle
+}
+.list-brand{
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  padding:10rpx 20rpx;
+  margin-right: 20rpx;
+}
+.mv-radius {
+	border-radius: 4px
+}
+
+.mv-round {
+	border-radius: 1000px
+}
+
+.mv-circle {
+	border-radius: 50%
+}
+
+.mv-text-l {
+	text-align: left
+}
+
+.mv-text-r {
+	text-align: right
+}
+
+.mv-text-c {
+	text-align: center
+}
+
+.mv-va-t {
+	vertical-align: top!important
+}
+
+.mv-va-m {
+	vertical-align: middle!important
+}
+
+.mv-va-b {
+	vertical-align: bottom!important
+}
+
+.mv-cl-333 {
+	color: #333
+}
+
+.mv-cl-666 {
+	color: #666
+}
+
+.mv-cl-999 {
+	color: #999
+}
+
+.mv-cl-ccc {
+	color: #ccc
+}
+
+.mv-cl-red {
+	color: #f32f3e
+}
+
+.mv-cl-brown {
+	color: #c96
+}
+
+.mv-ellipsis {
+	word-wrap: normal;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden
+}
+
+.mv-text-del {
+	text-decoration: line-through
+}
+
+.mv-text-xs {
+	font-size: 24rpx
+}
+
+.mv-text-sm {
+	font-size: 28rpx
+}
+
+.mv-text-df {
+	font-size: 32rpx
+}
+
+.mv-text-lg {
+	font-size: 36rpx
+}
+
+.mv-text-xl {
+	font-size: 48rpx
+}
+
+.mv-text-xxl {
+	font-size: 64rpx
+}
+
+.mv-text-xxxl {
+	font-size: 84rpx
+}
+
+.mv-lh-df {
+	line-height: 32rpx
+}
+
+.mv-lh-xs {
+	line-height: 24rpx
+}
+
+.mv-lh-sm {
+	line-height: 28rpx
+}
+
+.mv-lh-lg {
+	line-height: 36rpx
+}
+
+.mv-lh-xl {
+	line-height: 48rpx
+}
+
+.mv-lh-xxl {
+	line-height: 64rpx
+}
+
+.mv-lh-xxxl {
+	line-height: 84rpx
+}
+
+.pos-r {
+	position: relative
+}
+
+.pos-a {
+	position: absolute
+}
+
+.pos-f {
+	position: fixed
+}
+
+.mv-fl {
+	float: left!important
+}
+
+.mv-fr {
+	float: right!important
+}
+
+.clearfix:after,.mv-cf:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden
+}
+
+.clearfix,.mv-cf {
+	zoom: 1
+}
+
+.mv-mg-xs {
+	margin: 10rpx
+}
+
+.mv-mg-sm {
+	margin: 20rpx
+}
+
+.mv-mg-df {
+	margin: 32rpx
+}
+
+.mv-mg-l {
+	margin: 20px
+}
+
+.mv-mg-lg {
+	margin: 48rpx
+}
+
+.mv-mg-xl {
+	margin: 64rpx
+}
+
+.mv-mg-t-xs {
+	margin-top: 10rpx
+}
+
+.mv-mg-t-sm {
+	margin-top: 20rpx
+}
+
+.mv-mg-t-df {
+	margin-top: 32rpx
+}
+
+.mv-mg-t-l {
+	margin-top: 20px
+}
+
+.mv-mg-t-lg {
+	margin-top: 48rpx
+}
+
+.mv-mg-t-xl {
+	margin-top: 64rpx
+}
+
+.mv-mg-b-xs {
+	margin-bottom: 10rpx
+}
+
+.mv-mg-b-sm {
+	margin-bottom: 20rpx
+}
+
+.mv-mg-b-df {
+	margin-bottom: 32rpx
+}
+
+.mv-mg-b-l {
+	margin-bottom: 20px
+}
+
+.mv-mg-b-lg {
+	margin-bottom: 48rpx
+}
+
+.mv-mg-b-xl {
+	margin-bottom: 64rpx
+}
+
+.mv-mg-l-xs {
+	margin-left: 10rpx
+}
+
+.mv-mg-l-sm {
+	margin-left: 20rpx
+}
+
+.mv-mg-l-df {
+	margin-left: 32rpx
+}
+
+.mv-mg-l-l {
+	margin-left: 20px
+}
+
+.mv-mg-l-lg {
+	margin-left: 48rpx
+}
+
+.mv-mg-l-xl {
+	margin-left: 64rpx
+}
+
+.mv-mg-r-xs {
+	margin-right: 10rpx
+}
+
+.mv-mg-r-sm {
+	margin-right: 20rpx
+}
+
+.mv-mg-r-df {
+	margin-right: 32rpx
+}
+
+.mv-mg-r-l {
+	margin-right: 20px
+}
+
+.mv-mg-r-lg {
+	margin-right: 48rpx
+}
+
+.mv-mg-r-xl {
+	margin-right: 64rpx
+}
+
+.mv-pd-xs {
+	padding: 10rpx
+}
+
+.mv-pd-sm {
+	padding: 20rpx
+}
+
+.mv-pd-df {
+	padding: 32rpx
+}
+
+.mv-pd-l {
+	padding: 20px
+}
+
+.mv-pd-lg {
+	padding: 48rpx
+}
+
+.mv-pd-xl {
+	padding: 64rpx
+}
+
+.mv-pd-t-xs {
+	padding-top: 10rpx
+}
+
+.mv-pd-t-sm {
+	padding-top: 20rpx
+}
+
+.mv-pd-t-df {
+	padding-top: 32rpx
+}
+
+.mv-pd-t-l {
+	padding-top: 20px
+}
+
+.mv-pd-t-lg {
+	padding-top: 48rpx
+}
+
+.mv-pd-t-xl {
+	padding-top: 64rpx
+}
+
+.mv-pd-b-xs {
+	padding-bottom: 10rpx
+}
+
+.mv-pd-b-sm {
+	padding-bottom: 20rpx
+}
+
+.mv-pd-b-df {
+	padding-bottom: 32rpx
+}
+
+.mv-pd-b-l {
+	padding-bottom: 20px
+}
+
+.mv-pd-b-lg {
+	padding-bottom: 48rpx
+}
+
+.mv-pd-b-xl {
+	padding-bottom: 64rpx
+}
+
+.mv-pd-l-xs {
+	padding-left: 10rpx
+}
+
+.mv-pd-l-sm {
+	padding-left: 20rpx
+}
+
+.mv-pd-l-df {
+	padding-left: 32rpx
+}
+
+.mv-pd-l-l {
+	padding-left: 20px
+}
+
+.mv-pd-l-lg {
+	padding-left: 48rpx
+}
+
+.mv-pd-l-xl {
+	padding-left: 64rpx
+}
+
+.mv-pd-r-xs {
+	padding-right: 10rpx
+}
+
+.mv-pd-r-sm {
+	padding-right: 20rpx
+}
+
+.mv-pd-r-df {
+	padding-right: 32rpx
+}
+
+.mv-pd-r-l {
+	padding-right: 20px
+}
+
+.mv-pd-r-lg {
+	padding-right: 48rpx
+}
+
+.mv-pd-r-xl {
+	padding-right: 64rpx
+}
+
+.mv-bd {
+	border: 1px solid #e6e6e6
+}
+
+.mv-bd-b {
+	border-bottom: 1px solid #e6e6e6
+}
+
+.mv-bd-l {
+	border-left: 1px solid #e6e6e6
+}
+
+.mv-bd-r {
+	border-right: 1px solid #e6e6e6
+}
+
+.mv-bd-t {
+	border-top: 1px solid #e6e6e6
+}
+
+.mv-form-group {
+	margin-bottom: 110rpx
+}
+
+.mv-form-label {
+	display: inline-block;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-top: .8em;
+	text-align: right;
+	font-size: 32rpx
+}
+
+.mv-input-group {
+	position: relative;
+	display: table;
+	border-collapse: separate
+}
+
+.mv-form-group:after,.mv-form-group:before {
+	content: "";
+	display: table
+}
+
+.mv-form-group:after {
+	clear: both
+}
+
+.mv-input-group-label {
+	display: table-cell;
+	width: 1%;
+	white-space: nowrap;
+	vertical-align: middle;
+	padding: 0 1em;
+	font-size: 32rpx;
+	font-weight: 400;
+	color: #666;
+	text-align: center;
+	border-radius: 0
+}
+
+.mv-form .form-input,.mv-form .form-select,.mv-form .form-textarea,.mv-form-field {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	display: block;
+	width: 100%;
+	padding: .8em 1em;
+	font-size: 32rpx;
+	line-height: 1.2;
+	color: #666;
+	vertical-align: middle;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	-webkit-appearance: none;
+	-webkit-transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out
+}
+
+.mv-form .form-input.xs {
+	font-size: 24rpx
+}
+
+.mv-form .form-input.sm {
+	font-size: 28rpx
+}
+
+.mv-form .form-input.no-bd {
+	border: none
+}
+
+.mv-form .form-input.no-pd {
+	padding: .8em 0
+}
+
+.mv-form .form-input.no-bg {
+	background: 0 0
+}
+
+.mv-form .form-input.xs {
+	font-size: 24rpx
+}
+
+.mv-form .form-input.sm {
+	font-size: 28rpx
+}
+
+.mv-form .form-input.lg {
+	font-size: 36rpx
+}
+
+.mv-form .form-input.xl {
+	font-size: 20px
+}
+
+.mv-form .form-select {
+	-webkit-appearance: none!important;
+	-moz-appearance: none!important;
+	-webkit-border-radius: 0;
+	background: #fff url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSI1cHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIiBzdHlsZT0iZmlsbDojY2NjOyIvPjwvc3ZnPg==) no-repeat 100% center
+}

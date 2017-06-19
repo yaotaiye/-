@@ -1,0 +1,50 @@
+<import src="../common/nav.wxml"/>
+<import src="../common/prompt.wxml"/>
+<view class="container">
+<!--幻灯片.wxml-->
+ <view>
+  <swiper class="swiper_box" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}"
+                autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" >
+            <block wx:for="{{images}}">
+                <swiper-item>
+                    <image mode="widthFix" src="{{imgPath}}{{item.picurl}}" class="slide-image"/>
+                </swiper-item>
+            </block>
+   </swiper>
+</view>
+<!--跑马灯-->
+<view class="marquee_box">
+  <view class="marquee_box  mv-pd-sm">
+    <view class="marquee_text" style="{{orientation}}:{{marqueeDistance}}px;font-size: {{size}}px;">
+      {{text}}
+    </view>
+  </view>
+</view>
+<!--菜单-->
+<template is="nav" data="{{ navList }}"/>
+<!--列表-->
+  <!--提示-->
+   <template is="prompt" data="{{ prompt }}"/>
+   <view class="weui-cells weui-cells_after-title">
+    <block wx:for="{{gpList}}">
+          <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+              <view class="bg-oragen mv-radius list-brand">
+                <view class="big-text mv-text-xl">HSI</view>
+                <view class="">恒指</view>
+              </view>
+      
+              <view class="weui-cell__bd">{{item.InstrumentID}}</view>
+              <view class="weui-cell__ft weui-cell__ft_in-access">
+                <view class="classname">{{item.LastPrice}}</view>
+                <view class="classname">{{item.Chg}}</view>
+              </view>
+          </navigator>
+     </block>
+       
+    </view>
+
+
+
+</view>
+
+   

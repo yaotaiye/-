@@ -1,0 +1,28 @@
+.stock{
+    padding-bottom: 20rpx;
+    font-size: 24rpx;
+}
+.stock text{
+    display: block;
+}
+.canvas-wrap{
+    position: relative;
+}
+.canvas-wrap .axis-stage{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+page{
+    height: 100%;
+    overflow: auto;
+    background: #1C1F27;
+}
+.container {
+    font-size: 24rpx;
+    background: #1C1F27;
+    color: white;
+}
+.content{
+    padding-top: 50rpx;
+}

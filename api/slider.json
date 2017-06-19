@@ -1,0 +1,36 @@
+{
+  "meta": {
+        "code": 0,
+        "message": "调用成功"
+    },   
+ "data": {
+        "slider":[
+        {
+            "name": "年货大礼包",
+            "orders": 1,
+            "picurl": "/images/banenr01.jpg",
+            "targeturl": "#"
+        },
+        {
+            "name": "年货大礼包",
+            "orders": 2,
+            "picurl": "/images/banenr02.jpg",
+            "targeturl": "#"
+        },
+        {
+             "name": "年货大礼包",
+            "orders": 3,
+            "picurl": "/images/banenr03.jpg",
+            "targeturl": "#"
+        },
+         {
+             "name": "年货大礼包",
+            "orders": 3,
+            "picurl": "/images/banenr04.jpg",
+            "targeturl": "#"
+        }
+      
+    ]
+ }
+  
+}

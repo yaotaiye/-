@@ -1,0 +1,55 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/deal/index",
+    "pages/news/index",
+    "pages/user/index",
+    "pages/chicang/index",
+    "pages/kl/kl",
+    "pages/ts/ts",
+    "pages/zijin/index"
+ 
+    
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#479de6",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "恒期宝",
+    "backgroundColor": "#f8f8f8",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": "true"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#479de6",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "assets/images/iconfont-home.png",
+        "selectedIconPath": "assets/images/iconfont-home-active.png",
+        "text": "行情"
+      },
+      {
+        "pagePath": "pages/kl/kl",
+        "iconPath": "assets/images/iconfont-list.png",
+        "selectedIconPath": "assets/images/iconfont-list-active.png",
+        "text": "K线"
+      },
+      {
+        "pagePath": "pages/ts/ts",
+        "iconPath": "assets/images/iconfont-order-default.png",
+        "selectedIconPath": "assets/images/iconfont-order.png",
+        "text": "分时"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "iconPath": "assets/images/iconfont-user.png",
+        "selectedIconPath": "assets/images/iconfont-user-active.png",
+        "text": "账户"
+      }
+    ]
+  }
+}
