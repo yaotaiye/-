@@ -10,6 +10,7 @@ Page({
       duration: 1000,
       imgPath:app.Config.fileBasePath,
 
+      timer1:null,
       text: '风险须知：由于期货行情波动比较大，如果您使用手机操作交易可能会因为本身网络等不确定因素，导致你的交易不能正常工作，所造成的任何损失，全部由使用者承担。',
       marqueePace: 1,//滚动速度
       marqueeDistance: 0,//初始滚动距离
@@ -36,7 +37,7 @@ Page({
   onShow:function(){
     this.getBanners();
     //跑马灯
-//this.pmdInit();
+  this.pmdInit();
   this.getList();
   
   },
@@ -100,30 +101,33 @@ Page({
     },
     pmdInit(){
       var vm = this;
-      var length = vm.data.text.length * vm.data.size;//文字长度
+      var pmdLen = vm.data.text.length * vm.data.size;//文字长度
       var windowWidth = wx.getSystemInfoSync().windowWidth;// 屏幕宽度
+   
       vm.setData({
-        length: length,
+        pmdLen: pmdLen,
         windowWidth: windowWidth
       });
+      //console.log(pmdLen + ':' + windowWidth)
       vm.pmd();// 水平一行字滚动完了再按照原来的方向滚动
     },
     pmd: function () {
-      var vm = this;
-      clearInterval(vm.data.pdminterval);
-       vm.data.pdminterval = setInterval(function () {
-        if (-vm.data.marqueeDistance < vm.data.length) {
-          vm.setData({
-            marqueeDistance: vm.data.marqueeDistance - vm.data.marqueePace,
-          });
-        } else {
-          clearInterval(vm.data.pdminterval);
-          vm.setData({
-            marqueeDistance: vm.data.windowWidth
-          });
-          vm.pmd();
-        }
-      }, vm.data.intervalMD);
+       var vm = this;
+       
+        vm.setData({
+          marqueeDistance: vm.data.marqueeDistance - vm.data.marqueePace,
+        });
+        clearTimeout(vm.data.timer1);
+        vm.data.timer1 =setTimeout(function () {
+          if (-vm.data.marqueeDistance >= vm.data.pmdLen) {
+              vm.setData({
+                marqueeDistance: vm.data.windowWidth
+              });
+          } 
+            vm.pmd();
+          
+         }, vm.data.intervalMD);
+    
     },
     navigateTo(e) {
         wx.navigateTo({
