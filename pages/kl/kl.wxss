@@ -78,7 +78,9 @@ page{
 .modalBox  .inline{
   display: inline-block;
 }
-.modalBox .mdbtn{padding:20rpx;}
+ .mdbtn{
+  padding:0px;
+  }
 .modalBox .close{
   position: absolute;
   right:10px;
@@ -88,4 +90,7 @@ page{
   color: #fff;
   font-size: 48rpx;
   line-height: 48rpx;
+}
+.radius0{
+  border-radius: 0;
 }

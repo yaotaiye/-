@@ -93,9 +93,9 @@
               <view class="weui-cell__bd">交易数量</view>
               <view class="weui-cell__bd">
                   <view class="weui-grids mv-text-c">
-                    <view class="weui-grid mdbtn">-</view>
-                    <view class="weui-grid mdbtn">0</view>
-                    <view class="weui-grid mdbtn">+</view>
+                    <view class="weui-grid mdbtn"><button class="weui-btn mini-btn radius0" type="primary" >-</button></view>
+                    <view class="weui-grid mdbtn"><button class="weui-btn mini-btn radius0" type="primary"  >0</button></view>
+                    <view class="weui-grid mdbtn"><button class="weui-btn mini-btn radius0" type="primary" >+</button></view>
                   </view>
               </view>
                 <view class="weui-cell__bd"></view>
@@ -104,23 +104,23 @@
               <view class="weui-cell__bd">止损点数</view>
                   <view class="weui-cell__bd">
                   <view class="weui-grids mv-text-c">
-                    <view class="weui-grid mdbtn">-</view>
-                    <view class="weui-grid mdbtn">0</view>
-                    <view class="weui-grid mdbtn">+</view>
+                    <view class="weui-grid mdbtn"><button class="weui-btn mini-btn radius0" type="primary" disabled="{{sw1}}">-</button></view>
+                    <view class="weui-grid mdbtn"><button class="weui-btn mini-btn radius0" type="primary"  >0</button></view>
+                    <view class="weui-grid mdbtn"><button class="weui-btn mini-btn radius0" type="primary" disabled="{{sw1}}">+</button></view>
                   </view>
               </view>
-              <view class="weui-cell__bd mv-text-r"><switch  /> </view>
+              <view class="weui-cell__bd mv-text-r"><switch bindchange="switch1Change"  /> </view>
           </view>
           <view class="weui-cell weui-cell_switch">
               <view class="weui-cell__bd">止盈点数</view>
                   <view class="weui-cell__bd">
                   <view class="weui-grids mv-text-c">
-                    <view class="weui-grid mdbtn">-</view>
-                    <view class="weui-grid mdbtn">0</view>
-                    <view class="weui-grid mdbtn">+</view>
+                    <view class="weui-grid mdbtn"><button class="weui-btn mini-btn radius0" type="primary" disabled="{{sw2}}">-</button></view>
+                    <view class="weui-grid mdbtn"><button class="weui-btn mini-btn radius0" type="primary"  >0</button></view>
+                    <view class="weui-grid mdbtn"><button class="weui-btn mini-btn radius0" type="primary" disabled="{{sw2}}">+</button></view>
                   </view>
               </view>
-              <view class="weui-cell__bd mv-text-r"> <switch  /></view>
+              <view class="weui-cell__bd mv-text-r"> <switch  bindchange="switch2Change"   /></view>
           </view>
     </view>
     <view class="mv-pd-r-sm mv-pd-l-sm"> <button bindtap="buy" class="weui-btn mini-btn" type="warn" size="block">买入市价</button></view>
@@ -128,7 +128,7 @@
           <label class="weui-agree" for="weuiAgree">
               <view class="mv-cl-white">
                   <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
-                  <view class="weui-agree__checkbox-icon">
+                  <view class="weui-agree__checkbox-icon" style="height:14px;width:14px;">
                       <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="12" wx:if="{{isAgree}}"></icon>
                   </view>
                   阅读并同意<navigator url="" class="weui-agree__link" style="color:#ccc">《投资人与用户交易合作协议》</navigator>

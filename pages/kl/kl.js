@@ -200,7 +200,10 @@ Page({
         //弹框
         buypop:true,
         salepop: true,
-        canvasHide:false
+        canvasHide:false,
+        isAgree:false,
+        sw1:true,
+        sw2: true,
     },
     onLoad: function () {
       var tsData = storage.getTsData();
@@ -445,5 +448,20 @@ Page({
         buypop: true,
         canvasHide: false
       })
+    },
+    bindAgreeChange: function (e) {
+      this.setData({
+        isAgree: !!e.detail.value.length
+      });
+    },
+    switch1Change: function (e) {
+      this.setData({
+        sw1: !e.detail.value
+      });
+    },
+    switch2Change: function (e) {
+      this.setData({
+        sw2: !e.detail.value
+      });
     }
 });
