@@ -200,6 +200,7 @@ Page({
         //弹框
         buypop:true,
         salepop: true,
+        canvasHide:false
     },
     onLoad: function () {
       var tsData = storage.getTsData();
@@ -429,17 +430,20 @@ Page({
       // });
 
       this.setData({
-         buypop:false
+        buypop: false,
+        canvasHide: true
       })
     },
     sale:function(){
       this.setData({
-        buypop: false
+        buypop: false,
+        canvasHide:true
       })
     },
     closePop:function(){
       this.setData({
-        buypop: true
+        buypop: true,
+        canvasHide: false
       })
     }
 });
