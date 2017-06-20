@@ -74,7 +74,7 @@ img {
 .mv-cl-brown {
 	color: #c96
 }
-
+.mv-cl-white{color: #fff;}
 .mv-ellipsis {
 	word-wrap: normal;
 	text-overflow: ellipsis;

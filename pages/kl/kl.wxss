@@ -35,7 +35,57 @@ page{
     font-size: 24rpx;
     background: #1C1F27;
     color: white;
+     position: relative;
 }
 .content{
     padding-top: 50rpx;
+}
+
+/*分时*/
+.canvas-wrap{
+    position: relative;
+}
+.canvas-wrap .axis-stage{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.modalBox {
+    display: block;
+    width: 96%;
+    border-radius: 6px;
+    background-color: rgba(47, 96, 152, 0.8);
+    z-index: 999;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    padding: 5% 0 2%;
+}
+.modalBox .max-title{
+  font-size: 40rpx;
+}
+.modalBox .min-title{
+  font-size: 32rpx;
+}
+.modalBox .content{
+  padding: 20rpx;
+  font-size: 28rpx;
+}
+.modalBox  .inline{
+  display: inline-block;
+}
+.modalBox .mdbtn{padding:20rpx;}
+.modalBox .close{
+  position: absolute;
+  right:10px;
+  top:10px;
+  width: 40rpx;
+  height: 40rpx;
+  color: #fff;
+  font-size: 48rpx;
+  line-height: 48rpx;
 }

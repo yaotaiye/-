@@ -7,7 +7,6 @@
     "pages/user/index",
     "pages/chicang/index",
     "pages/kl/kl",
-    "pages/ts/ts",
     "pages/zijin/index"
  
     
@@ -39,10 +38,10 @@
         "text": "K线"
       },
       {
-        "pagePath": "pages/ts/ts",
+        "pagePath": "pages/news/index",
         "iconPath": "assets/images/iconfont-order-default.png",
         "selectedIconPath": "assets/images/iconfont-order.png",
-        "text": "分时"
+        "text": "资讯"
       },
       {
         "pagePath": "pages/user/index",

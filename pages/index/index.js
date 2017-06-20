@@ -36,9 +36,10 @@ Page({
   },
   onShow:function(){
     this.getBanners();
-    //跑马灯
-  this.pmdInit();
-  this.getList();
+      //跑马灯
+   // clearTimeout(this.data.timer1);
+    //this.pmdInit();
+    this.getList();
   
   },
   getList(){

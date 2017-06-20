@@ -1,5 +1,6 @@
-<view class="container">
+<view class="container page__bd">
     <view class="tab">
+        <text class="{{tabName == 'ts' ? 'current': ''}}" data-type="ts" bindtap="tabtsChart">分时</text>
         <text class="{{tabName == 'dk' ? 'current': ''}}" data-type="dk" bindtap="tabChart">日K</text>
         <text class="{{tabName == 'wk' ? 'current': ''}}" data-type="wk" bindtap="tabChart">周K</text>
         <text class="{{tabName == 'mk' ? 'current': ''}}" data-type="mk" bindtap="tabChart">月K</text>
@@ -9,8 +10,39 @@
                 {{minArray[minIndex]}}<view class="dropDownIcon"></view>
             </view>
         </picker>
+         <text class="{{tabName == 'pk' ? 'current': ''}}" data-type="pk" bindtap="tabChart">盘口</text>
     </view>
-    <view class="content tab-content">
+
+         <!--分时-->
+     <view class="content tab-content" wx:if="{{tabName == 'ts'}}">
+        <view class="stock">
+            <text>股票：{{stock}} - {{code}}</text>
+            <text>时间：{{time}}</text>
+            <text>昨收：{{yc}}</text>
+        </view>
+        <view class="canvas-wrap">
+            <canvas canvas-id="time-sharing" class="stage" style="width: 100%; height: 200px">
+            </canvas>
+            <canvas canvas-id="time-sharing-b" class="stage" style="width: 100%; height: 80px">
+            </canvas>
+            <canvas canvas-id="time-sharing-axis" class="stage axis-stage" style="width: 100%; height: 280px" bindlongtap="axisStart" bindtouchmove="axisMove" bindtouchend="axisStop">
+            </canvas>
+        </view>
+        <view class="btn-area">
+            <text class="btn" hover-class="btn-hover" bindtap="reset">重置</text>
+            <text class="btn" hover-class="btn-hover" bindtap="dynamic">模拟动态变化</text>
+            <picker class="btn" mode="selector" value="{{timerIndex}}" range="{{timerArray}}" bindchange="bindTimeChange">
+                <view class="picker">
+                    动态变更频率: {{timerArray[timerIndex]}}
+                </view>
+            </picker>
+            <!--<text class="p text">data index: {{dataIndex}}</text>
+            <text class="p text">ts1 render time: {{ts1RenderTime}}ms</text>
+            <text class="p text">ts2 render time: {{ts2RenderTime}}ms</text>-->
+        </view>
+    </view>
+      <!--k线-->
+    <view class="content tab-content" wx:if="{{tabName != 'ts'}}">
         <view class="stock">
             <text>股票：{{stock}} - {{code}}</text>
             <text>时间：{{time}}</text>
@@ -30,9 +62,75 @@
         </view>
         <canvas canvas-id="k-line-b" class="stage" style="width: 100%; height: 80px;">
         </canvas>
+        <view class="btn-area">
+          <text class="p text">kl1 render time: {{kl1RenderTime}}ms</text>
+          <text class="p text">kl2 render time: {{kl2RenderTime}}ms</text>
+         </view>
     </view>
-    <view class="btn-area">
-        <text class="p text">kl1 render time: {{kl1RenderTime}}ms</text>
-        <text class="p text">kl2 render time: {{kl2RenderTime}}ms</text>
+    <!--购买按钮-->
+    <view class="weui-footer_fixed-bottom">
+     <view class=" page__bd_spacing">
+        <view class="weui-flex">
+            <view class="weui-flex__item" style="padding-right:10rpx;">  <button bindtap="buy" class="weui-btn mini-btn" type="warn" size="block">买入255400</button></view>
+            <view class="weui-flex__item"  style="padding-left:10rpx;">   <button class="weui-btn mini-btn" type="primary" size="block">卖出25500</button></view>
+        </view>
+      </view>
+   </view>
+
+ 
+
+</view>
+
+ <!--买入弹框-->
+<view class="modalBox mv-cl-white "  hidden="{{ buypop }}">
+    <view class="max-title mv-text-c">市价</view>
+    <view class="min-title mv-text-c ">买入价 <text class="mv-cl-red">20232</text> </view>
+    <view class="content">
+        <view class="weui-cell ">
+              <view class="weui-cell__bd">交易数量</view>
+              <view class="weui-cell__bd">
+                  <view class="weui-grids mv-text-c">
+                    <view class="weui-grid mdbtn">-</view>
+                    <view class="weui-grid mdbtn">0</view>
+                    <view class="weui-grid mdbtn">+</view>
+                  </view>
+              </view>
+                <view class="weui-cell__bd"></view>
+          </view>
+          <view class="weui-cell weui-cell_switch">
+              <view class="weui-cell__bd">止损点数</view>
+                  <view class="weui-cell__bd">
+                  <view class="weui-grids mv-text-c">
+                    <view class="weui-grid mdbtn">-</view>
+                    <view class="weui-grid mdbtn">0</view>
+                    <view class="weui-grid mdbtn">+</view>
+                  </view>
+              </view>
+              <view class="weui-cell__bd mv-text-r"><switch  /> </view>
+          </view>
+          <view class="weui-cell weui-cell_switch">
+              <view class="weui-cell__bd">止盈点数</view>
+                  <view class="weui-cell__bd">
+                  <view class="weui-grids mv-text-c">
+                    <view class="weui-grid mdbtn">-</view>
+                    <view class="weui-grid mdbtn">0</view>
+                    <view class="weui-grid mdbtn">+</view>
+                  </view>
+              </view>
+              <view class="weui-cell__bd mv-text-r"> <switch  /></view>
+          </view>
     </view>
+    <view class="mv-pd-r-sm mv-pd-l-sm"> <button bindtap="buy" class="weui-btn mini-btn" type="warn" size="block">买入市价</button></view>
+    <checkbox-group bindchange="bindAgreeChange">
+          <label class="weui-agree" for="weuiAgree">
+              <view class="mv-cl-white">
+                  <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
+                  <view class="weui-agree__checkbox-icon">
+                      <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="12" wx:if="{{isAgree}}"></icon>
+                  </view>
+                  阅读并同意<navigator url="" class="weui-agree__link" style="color:#ccc">《投资人与用户交易合作协议》</navigator>
+              </view>
+          </label>
+      </checkbox-group>
+      <view class="close" bindtap="closePop">×</view>
 </view>

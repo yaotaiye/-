@@ -5,9 +5,9 @@
  <view>
   <swiper class="swiper_box" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}"
                 autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" >
-            <block wx:for="{{images}}">
+            <block wx:for="{{images}}" wx:for-item="slidePic" wx:key="*this" >
                 <swiper-item>
-                    <image mode="widthFix" src="{{imgPath}}{{item.picurl}}" class="slide-image"/>
+                    <image mode="widthFix" src="{{imgPath}}{{slidePic.picurl}}" class="slide-image"/>
                 </swiper-item>
             </block>
    </swiper>
@@ -26,17 +26,17 @@
   <!--提示-->
    <template is="prompt" data="{{ prompt }}"/>
    <view class="weui-cells weui-cells_after-title">
-    <block wx:for="{{gpList}}">
+    <block wx:for="{{gpList}}" wx:for-item="listItem" wx:key="*this" >
           <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
               <view class="bg-oragen mv-radius list-brand">
                 <view class="big-text mv-text-xl">HSI</view>
                 <view class="">恒指</view>
               </view>
       
-              <view class="weui-cell__bd">{{item.InstrumentID}}</view>
+              <view class="weui-cell__bd">{{listItem.InstrumentID}}</view>
               <view class="weui-cell__ft weui-cell__ft_in-access">
-                <view class="classname">{{item.LastPrice}}</view>
-                <view class="classname">{{item.Chg}}</view>
+                <view class="classname">{{listItem.LastPrice}}</view>
+                <view class="classname">{{listItem.Chg}}</view>
               </view>
           </navigator>
      </block>
