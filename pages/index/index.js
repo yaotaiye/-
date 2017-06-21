@@ -143,7 +143,7 @@ Page({
   onLoad: function () {
     //console.log(wx)
    
-    app.checkLogin;
+    new app.checkLogin;
   
   }
 })

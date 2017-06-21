@@ -9,18 +9,19 @@ class Login{
   checkLogin(){
    var user=null;
    var that=this;
-    wx.getStorage({
-      key: 'userInfo',
-      success: function (res) {
-       user=res.data
-      }
-    });
-    if(user){return true}
-    else{
-      wx.redirectTo({
-        url: that.url
-      })
-    }
+   user= wx.getStorageSync( 'userInfo' );
+   if (user) {
+     wx.redirectTo({
+       url: 'pages/index/index'
+     })
+     //  return true;
+   }
+   else {
+     wx.redirectTo({
+       url: that.url
+     })
+   }
+  
   }
  
 }

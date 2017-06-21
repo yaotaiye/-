@@ -18,3 +18,4 @@
     </view>
        
 <navigator url="../login/login" class="weui-cell weui-cell_access" hover-class="weui-cell_active">登录 </navigator>
+<navigator url="../ts/ts" class="weui-cell weui-cell_access" hover-class="weui-cell_active">分时 </navigator>

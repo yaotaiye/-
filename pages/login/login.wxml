@@ -14,7 +14,7 @@
        <label class="label" >密码</label>
        <input  type="text" password="password" placeholder="请输入密码" bindinput="getPwd"  class="lable_input" />
       </view>
-      <label class="inline" for="agreexy" >  <checkbox value="value" id="agreexy" /> 保持登录</label>
+      <label class="inline" for="agreexy" >  <checkbox value="value" id="agreexy" checked="{{agreen}}" /> 保持登录</label>
       <navigator class="abq" url="" >风险提示</navigator>
       <!--<button class="login-but">登录</button>-->
       <button bindtap="Login" class="weui-btn mini-btn" type="warn" >登录</button>
