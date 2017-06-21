@@ -1,0 +1,24 @@
+<view class="login-main">
+  <view class="login-box">
+    <image src="http://www.kjzxian.com:9030/Trading_system2/images/直达期货.jpg"  style=" width:60px;height:60px;"></image>
+  </view>
+  <view class="login-title">期盘交易</view>
+  <view style="width: 83.125%; margin: 0 auto;overflow: hidden;">
+    <view style="display: block;">
+      <view class="input-group">
+       <view class="mui-input-row login-input-row">
+       <label class="label" >账号</label>
+       <input  type="text" placeholder="请输入账号" class="lable_input" bindinput="getUserName" />
+      </view>
+       <view class="mui-input-row login-input-row">
+       <label class="label" >密码</label>
+       <input  type="text" password="password" placeholder="请输入密码" bindinput="getPwd"  class="lable_input" />
+      </view>
+      <label class="inline" for="agreexy" >  <checkbox value="value" id="agreexy" /> 保持登录</label>
+      <navigator class="abq" url="" >风险提示</navigator>
+      <!--<button class="login-but">登录</button>-->
+      <button bindtap="Login" class="weui-btn mini-btn" type="warn" >登录</button>
+    </view>
+  </view>
+</view>
+</view>

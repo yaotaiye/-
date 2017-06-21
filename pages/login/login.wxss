@@ -1,0 +1,95 @@
+.login-main {
+    width: 100%;
+    height: 700px; 
+    display: inline-block;
+    overflow: hidden;
+    background-image: url('http://www.kjzxian.com:9030/Trading_system2/images/login-bj.jpg');
+
+}
+.login-box{
+  margin-top:100px;
+   margin-bottom:10px;
+   text-align:center;
+}
+
+.login-title{
+  font-weight: bold;
+  text-align: center; 
+  color: #FFFFFF;
+  margin-bottom: 5%;
+}
+
+.input-group
+{
+background: none;
+ position: relative;
+ padding: 0;border: 0;
+}
+
+.login-input-row
+{
+  width: 100%;
+    height: 46px;
+    margin-bottom: 10px;
+    background: none;
+    float: left;
+    border-bottom: 1px solid rgba(255,255,255,.4);
+    margin-bottom: 20px;
+}
+
+.mui-input-group .mui-input-row:after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 15px;
+    height: 1px;
+    content: '';
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    background-color: #c8c7cc;
+}
+
+label{
+      width: 10%;
+    margin: 0;
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    padding: 12px 10px;
+}
+
+label~input {
+    width: 85%;
+    color: #FFFFFF;
+    margin-top: 4px;
+}
+.lable_input{
+  float: right;
+    width: 65%;
+     color: #FFFFFF;
+    margin-bottom: 0;
+    padding-left: 0;
+    border: 0;
+}
+
+.inline{
+      width: 10%;
+    margin: 0;
+    font-size: 1rem;
+    color:#c8c7cc;
+    padding: 12px 10px;
+}
+
+.abq{
+    float: right;
+    color:blue;
+}
+
+ .login-but {
+   border-radius: 35px;
+    border: 1px solid #f84201;
+    color: #FFFFFF;
+    margin-top: 3%;
+    font-size: 1rem;
+    background: #f84201;
+    opacity: 0.5;
+}

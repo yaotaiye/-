@@ -3,7 +3,7 @@
 import Config from 'etc/config';
 import Fetch from 'assets/js/fetch';
 import Tools from 'assets/js/Tools';
-
+import checkLogin from 'assets/js/checkLogin';
 App({
   onLaunch: function () {
     //文字适配
@@ -18,5 +18,6 @@ App({
   },
   Tools: new Tools, 
   Config: Config,
-  Fetch: Fetch
+  Fetch: Fetch,
+  checkLogin: new checkLogin('pages/login/login')
 })

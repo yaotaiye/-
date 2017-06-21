@@ -7,7 +7,8 @@
     "pages/user/index",
     "pages/chicang/index",
     "pages/kl/kl",
-    "pages/zijin/index"
+    "pages/zijin/index",
+    "pages/login/login"
  
     
   ],
