@@ -46,11 +46,15 @@ Page({
     that.data.listTimer= setInterval(function(){
       that.getList();
     },2000)
+    //that.getList();
   
   },
   getList(){
     var that = this;
     var user = wx.getStorageSync('userInfo');
+    that.setData({
+      prompt: { hidden: true }
+    });
       var data = {
             p:'9070',
             a:'JsonAllReportPush',

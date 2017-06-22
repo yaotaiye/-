@@ -12,7 +12,7 @@
       </view>
        <view class="mui-input-row login-input-row">
        <label class="label" >密码</label>
-       <input  type="text" password="password" placeholder="请输入密码" bindinput="getPwd"  class="lable_input" />
+       <input  type="text" password="password" placeholder="请输入密码" bindinput="getPwd" bindconfirm="Login"  class="lable_input" />
       </view>
       <label class="inline" for="agreexy" >  <checkbox value="value" id="agreexy" checked="{{agreen}}" /> 保持登录</label>
       <navigator class="abq" url="" >风险提示</navigator>
