@@ -19,7 +19,7 @@ App({
   Tools: new Tools, 
   Config: Config,
   Fetch: Fetch,
-  checkLogin: new checkLogin('pages/login/login')
+  checkLogin: new checkLogin
   
 
 })
