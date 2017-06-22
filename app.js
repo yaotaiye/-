@@ -7,6 +7,7 @@ import checkLogin from 'assets/js/checkLogin';
 App({
   onLaunch: function () {
     //文字适配
+    console.log('onLaunch')
 
   },
   getUserInfo:function(cb){

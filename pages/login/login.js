@@ -8,11 +8,12 @@ Page({
   Login() {
     var that=this;
 
-    // wx.navigateTo({
-    //   url: '/pages/index/index'
-    // })
+    wx.showLoading({
+      title: '登录中',
+    })
 
       app.Fetch(`/data.ashx`, { p:'9070', a:'JsonReqUserLogin', UserName: that.data.UserName, Password: that.data.Password }).then(res => {
+        wx.hideLoading()
         if (res.data.error){
           //失败
           wx.showToast({

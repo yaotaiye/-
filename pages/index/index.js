@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
 var app = getApp()
+var singin=new app.checkLogin.check("/pages/login/login");
 Page({
   data: {
     indicatorDots: true,
@@ -12,11 +13,11 @@ Page({
 
       timer1:null,
       text: '风险须知：由于期货行情波动比较大，如果您使用手机操作交易可能会因为本身网络等不确定因素，导致你的交易不能正常工作，所造成的任何损失，全部由使用者承担。',
-      marqueePace: 1,//滚动速度
+      marqueePace: 2,//滚动速度
       marqueeDistance: 0,//初始滚动距离
       size: 14,
       orientation: 'left',//滚动方向
-      intervalMD: 20 ,// 时间间隔
+      intervalMD: 50 ,// 时间间隔
       
       navList:[
         { url: '../kl/kl', name: '交易', info: '下单交易平台', src: app.Config.fileBasePath +'/images/tb04.png'},
@@ -37,12 +38,15 @@ Page({
     })
   },
   onShow:function(){
+    console.log("onshow")
     var that=this;
     that.getBanners();
       //跑马灯
-   // clearTimeout(that.data.timer1);
-    //that.pmdInit();
- 
+    that.pmdInit();
+
+    wx.showLoading({
+      title: '加载中',
+    })
     that.data.listTimer= setInterval(function(){
       that.getList();
     },2000)
@@ -65,6 +69,7 @@ Page({
             }
           //调用应用实例的方法获取全局数据
       app.Fetch("/data.ashx", data).then(res => {
+          wx.hideLoading()
           if(res.data.error){
             clearInterval(that.data.listTimer);
             wx.showToast({
@@ -80,7 +85,8 @@ Page({
               })
             } else {
               that.setData({
-                prompt: { hidden: false }
+                prompt: { hidden: false },
+                gpList: []
               });
             }
           }
@@ -137,26 +143,22 @@ Page({
         windowWidth: windowWidth
       });
       //console.log(pmdLen + ':' + windowWidth)
-      vm.pmd();// 水平一行字滚动完了再按照原来的方向滚动
+      // 水平一行字滚动完了再按照原来的方向滚动
+      clearInterval(vm.data.timer1);
+      vm.data.timer1 = setInterval(function () {
+          //console.log('pmd')
+          vm.setData({
+            marqueeDistance: vm.data.marqueeDistance - vm.data.marqueePace,
+          });
+          if (vm.data.marqueeDistance <= -vm.data.pmdLen) {
+            vm.setData({
+              marqueeDistance: vm.data.windowWidth
+            });
+          }
+
+        }, vm.data.intervalMD);
     },
-    pmd: function () {
-       var vm = this;
-       
-        vm.setData({
-          marqueeDistance: vm.data.marqueeDistance - vm.data.marqueePace,
-        });
-        clearTimeout(vm.data.timer1);
-        vm.data.timer1 =setTimeout(function () {
-          if (-vm.data.marqueeDistance >= vm.data.pmdLen) {
-              vm.setData({
-                marqueeDistance: vm.data.windowWidth
-              });
-          } 
-            vm.pmd();
-          
-         }, vm.data.intervalMD);
-    
-    },
+
     navigateTo(e) {
         wx.navigateTo({
           url: e.currentTarget.dataset.url
@@ -173,9 +175,13 @@ Page({
       })
     },
   onLoad: function () {
-    //console.log(wx)
-   
-    new app.checkLogin.check("/pages/login/login");
-  
+    console.log('onLoad')
+  },
+  onHide:function(){
+    //清除定时器
+    var that=this;
+    clearInterval(that.data.timer1); 
+    clearInterval(that.data.listTimer);
+
   }
 })
