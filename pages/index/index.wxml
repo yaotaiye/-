@@ -27,7 +27,7 @@
    <template is="prompt" data="{{ prompt }}"/>
    <view class="weui-cells weui-cells_after-title">
     <block wx:for="{{gpList}}" wx:for-item="listItem" wx:key="*this" >
-          <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view bindtap="jump" data-url="../kl/kl?code={{listItem.InstrumentID}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
               <view class="bg-oragen mv-radius list-brand">
                 <view class="big-text mv-text-xl">HSI</view>
                 <view class="">恒指</view>
@@ -38,7 +38,7 @@
                 <view class="classname">{{listItem.LastPrice}}</view>
                 <view class="classname">{{listItem.Chg}}</view>
               </view>
-          </navigator>
+          </view>
      </block>
        
     </view>

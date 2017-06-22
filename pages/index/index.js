@@ -25,7 +25,9 @@ Page({
       ],
       prompt: {
         hidden: true
-      }
+      },
+      gpList:null,
+      listTimer:null
     
   },
   //事件处理函数
@@ -35,31 +37,52 @@ Page({
     })
   },
   onShow:function(){
-    this.getBanners();
+    var that=this;
+    that.getBanners();
       //跑马灯
-   // clearTimeout(this.data.timer1);
-    //this.pmdInit();
-    this.getList();
+   // clearTimeout(that.data.timer1);
+    //that.pmdInit();
+ 
+    that.data.listTimer= setInterval(function(){
+      that.getList();
+    },2000)
   
   },
   getList(){
     var that = this;
+    var user = wx.getStorageSync('userInfo');
+      var data = {
+            p:'9070',
+            a:'JsonAllReportPush',
+            id: user.SessionID,
+            begin: 0,
+            count: 20,
+            srvtype: user.SrvType || ''
+            }
+          //调用应用实例的方法获取全局数据
+      app.Fetch("/data.ashx", data).then(res => {
+          if(res.data.error){
+            clearInterval(that.data.listTimer);
+            wx.showToast({
+              title: res.data.error,
+              icon: 'success',
+              duration: 2000,
+              success: function () { }
+            });
+          }else{
+            if (res.data) {
+              that.setData({
+                gpList: res.data
+              })
+            } else {
+              that.setData({
+                prompt: { hidden: false }
+              });
+            }
+          }
+         
+      })
 
-    // var data = {
-    //   id: 87036728,
-    //   begin: 0,
-    //   count: 20,
-    //   srvtype:""}
-    // //调用应用实例的方法获取全局数据
-    // app.Fetch("/API/JsonAllReportPush.ashx", data).then(res => {
-    //     that.setData({ 
-    //         gpList:res.data
-    //     })
-    // })
-
-    that.setData({
-      gpList: [{ "Chg": "1.11%", "InstrumentID": "HSI706", "LastPrice": "25780" }, { "Chg": "1.13%", "InstrumentID": "HSI707", "LastPrice": "25665" }, { "Chg": "", "InstrumentID": "HSI708", "LastPrice": null }, { "Chg": "1.03%", "InstrumentID": "HSI709", "LastPrice": "25533" }, { "Chg": "", "InstrumentID": "HSI710", "LastPrice": null }]
-    })
    
   },
    getBanners(){
@@ -139,6 +162,11 @@ Page({
             url: e.currentTarget.dataset.url
           })
         }
+    },
+    jump(e){
+      wx.switchTab({
+        url: e.currentTarget.dataset.url
+      })
     },
   onLoad: function () {
     //console.log(wx)
