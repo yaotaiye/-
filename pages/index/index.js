@@ -88,6 +88,7 @@ Page({
                 prompt: { hidden: false },
                 gpList: []
               });
+              clearInterval(that.data.listTimer);
             }
           }
          
