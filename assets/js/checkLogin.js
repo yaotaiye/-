@@ -4,19 +4,13 @@
 class Login{
   constructor(url){
      this.url=url;
-     this.checkLogin();
+     //this.checkLogin();
   }
-  checkLogin(){
+  check(){
    var user=null;
    var that=this;
    user= wx.getStorageSync( 'userInfo' );
-   if (user) {
-     wx.redirectTo({
-       url: 'pages/index/index'
-     })
-     //  return true;
-   }
-   else {
+   if (!user) {
      wx.redirectTo({
        url: that.url
      })

@@ -20,4 +20,6 @@ App({
   Config: Config,
   Fetch: Fetch,
   checkLogin: new checkLogin('pages/login/login')
+  
+
 })
