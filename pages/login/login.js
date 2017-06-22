@@ -40,11 +40,11 @@ Page({
                 }
             );
          //跳转
-          // setTimeout(function () {
-          //   wx.redirectTo({
-          //     url: '../index/index'
-          //   })
-          // }, 1000)
+          setTimeout(function () {
+            wx.switchTab({
+              url: '../index/index'
+            })
+          }, 1000)
 
 
         }
