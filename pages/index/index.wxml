@@ -35,8 +35,8 @@
       
               <view class="weui-cell__bd">{{listItem.InstrumentID}}</view>
               <view class="weui-cell__ft weui-cell__ft_in-access">
-                <view class="classname">{{listItem.LastPrice}}</view>
-                <view class="classname">{{listItem.Chg}}</view>
+                <view class="classname">{{listItem.LastPrice || ""}}</view>
+                <view class="classname">{{listItem.Chg || ""}}</view>
               </view>
           </view>
      </block>

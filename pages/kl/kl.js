@@ -4,7 +4,7 @@
 
 var app = getApp();
 var storage = require('../../assets/storage');
-//分时
+//-------------分时-------------------
 var ts = require('../../assets/wxChart/time-sharing');
 var axisShow = require('../../assets/wxChart/axis-show');
 var ts1, ts2;     //分时
@@ -52,6 +52,7 @@ var getOptionTimeSharing1 = function (type, width) {
     }
   };
 };
+//成交量
 var getOptionTimeSharing2 = function (type, width) {
   return {
     name: type || 'time-sharing-b',
@@ -96,7 +97,7 @@ var getOptionTimeSharingAxis = function () {
   };
 };
 var timer = null;
-//k线
+//-----------k线-------------------
 var kl = require('../../assets/wxChart/k-line');
 var getOptionKline1 = function (type) {
     return {

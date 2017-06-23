@@ -37,7 +37,7 @@
         "pagePath": "pages/kl/kl",
         "iconPath": "assets/images/iconfont-list.png",
         "selectedIconPath": "assets/images/iconfont-list-active.png",
-        "text": "K线"
+        "text": "交易"
       },
       {
         "pagePath": "pages/news/index",
